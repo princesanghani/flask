@@ -1,0 +1,11 @@
+from flask import *
+app=Flask(__name__)
+@app.route('/', methods=['POST'])
+def login():
+n1=str(request.form['num1'])
+n2=str(request.form['num2'])
+return str(int(n1)+int(n2))
+@app.route('/')
+def my_form():
+return render_template("add.html")
+app.run(debug=True)
